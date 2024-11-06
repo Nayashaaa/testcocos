@@ -1,0 +1,244 @@
+
+HutAssemble.png
+size: 3698,2888
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+HUT ASSEMBLE 0200
+  rotate: false
+  xy: 2, 2407
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0201
+  rotate: false
+  xy: 618, 2407
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0202
+  rotate: false
+  xy: 1234, 2407
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0203
+  rotate: false
+  xy: 1850, 2407
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0204
+  rotate: false
+  xy: 2466, 2407
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0205
+  rotate: false
+  xy: 3082, 2407
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0206
+  rotate: false
+  xy: 2, 1926
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0207
+  rotate: false
+  xy: 618, 1926
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0208
+  rotate: false
+  xy: 1234, 1926
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0209
+  rotate: false
+  xy: 1850, 1926
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0210
+  rotate: false
+  xy: 2466, 1926
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0211
+  rotate: false
+  xy: 3082, 1926
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0212
+  rotate: false
+  xy: 2, 1445
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0213
+  rotate: false
+  xy: 618, 1445
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0214
+  rotate: false
+  xy: 1234, 1445
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0215
+  rotate: false
+  xy: 1850, 1445
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0216
+  rotate: false
+  xy: 2466, 1445
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0217
+  rotate: false
+  xy: 3082, 1445
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0218
+  rotate: false
+  xy: 2, 964
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0219
+  rotate: false
+  xy: 618, 964
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0220
+  rotate: false
+  xy: 1234, 964
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0221
+  rotate: false
+  xy: 1850, 964
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0222
+  rotate: false
+  xy: 2466, 964
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0223
+  rotate: false
+  xy: 3082, 964
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0224
+  rotate: false
+  xy: 2, 483
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0225
+  rotate: false
+  xy: 618, 483
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0226
+  rotate: false
+  xy: 1234, 483
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0227
+  rotate: false
+  xy: 1850, 483
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0228
+  rotate: false
+  xy: 2466, 483
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0229
+  rotate: false
+  xy: 3082, 483
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0230
+  rotate: false
+  xy: 2, 2
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0231
+  rotate: false
+  xy: 618, 2
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0232
+  rotate: false
+  xy: 1234, 2
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1
+HUT ASSEMBLE 0233
+  rotate: false
+  xy: 1850, 2
+  size: 614, 479
+  orig: 614, 479
+  offset: 0, 0
+  index: -1

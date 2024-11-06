@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "HutAssemble",
+    "texture": "122c46fc-0da5-41d9-a7c8-e9272401333d",
+    "atlas": "",
+    "rect": [
+      206,
+      161,
+      3286,
+      2577
+    ],
+    "offset": [
+      0,
+      -5.5
+    ],
+    "originalSize": [
+      3698,
+      2888
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

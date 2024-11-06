@@ -1,0 +1,237 @@
+
+HutDisassemble.png
+size: 1298,4046
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+HUT DISASSEMBLE 0200
+  rotate: false
+  xy: 2, 3709
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0201
+  rotate: false
+  xy: 2, 3372
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0202
+  rotate: false
+  xy: 2, 3035
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0203
+  rotate: false
+  xy: 2, 2698
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0204
+  rotate: false
+  xy: 2, 2361
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0205
+  rotate: false
+  xy: 2, 2024
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0206
+  rotate: false
+  xy: 2, 1687
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0207
+  rotate: false
+  xy: 2, 1350
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0208
+  rotate: false
+  xy: 2, 1013
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0209
+  rotate: false
+  xy: 2, 676
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0210
+  rotate: false
+  xy: 2, 339
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0211
+  rotate: false
+  xy: 2, 2
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0212
+  rotate: false
+  xy: 434, 3709
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0213
+  rotate: false
+  xy: 434, 3372
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0214
+  rotate: false
+  xy: 434, 3035
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0215
+  rotate: false
+  xy: 434, 2698
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0216
+  rotate: false
+  xy: 434, 2361
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0217
+  rotate: false
+  xy: 434, 2024
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0218
+  rotate: false
+  xy: 434, 1687
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0219
+  rotate: false
+  xy: 434, 1350
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0220
+  rotate: false
+  xy: 434, 1013
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0221
+  rotate: false
+  xy: 434, 676
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0222
+  rotate: false
+  xy: 434, 339
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0223
+  rotate: false
+  xy: 434, 2
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0224
+  rotate: false
+  xy: 866, 3709
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0225
+  rotate: false
+  xy: 866, 3372
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0226
+  rotate: false
+  xy: 866, 3035
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0227
+  rotate: false
+  xy: 866, 2698
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0228
+  rotate: false
+  xy: 866, 2361
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0229
+  rotate: false
+  xy: 866, 2024
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0230
+  rotate: false
+  xy: 866, 1687
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0231
+  rotate: false
+  xy: 866, 1350
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1
+HUT DISASSEMBLE 0232
+  rotate: false
+  xy: 866, 1013
+  size: 430, 335
+  orig: 430, 335
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,323 @@
+{
+  "__type__": "sp.SkeletonData",
+  "_name": "HutDisassemble",
+  "_objFlags": 0,
+  "_native": "",
+  "_skeletonJson": {
+    "skeleton": {
+      "hash": "Yv6+1YJV+3i+fbYf+xQC5uwLkiU",
+      "spine": "3.8.75",
+      "x": -307,
+      "y": -239.5,
+      "width": 614,
+      "height": 479,
+      "fps": 24,
+      "images": "C:\\Users\\RPA\\Desktop\\HUT BOTH\\HUT DISASSEMBLE",
+      "audio": "C:\\Users\\RPA\\Desktop\\HUT BOTH\\HUT DISASSEMBLE"
+    },
+    "bones": [
+      {
+        "name": "root"
+      }
+    ],
+    "slots": [
+      {
+        "name": "sheetSlot",
+        "bone": "root",
+        "attachment": "HUT DISASSEMBLE 0212"
+      }
+    ],
+    "skins": [
+      {
+        "name": "default",
+        "attachments": {
+          "sheetSlot": {
+            "HUT DISASSEMBLE 0200": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0201": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0202": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0203": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0204": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0205": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0206": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0207": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0208": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0209": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0210": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0211": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0212": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0213": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0214": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0215": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0216": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0217": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0218": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0219": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0220": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0221": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0222": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0223": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0224": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0225": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0226": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0227": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0228": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0229": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0230": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0231": {
+              "width": 614,
+              "height": 479
+            },
+            "HUT DISASSEMBLE 0232": {
+              "width": 614,
+              "height": 479
+            }
+          }
+        }
+      }
+    ],
+    "animations": {
+      "Sprite": {
+        "slots": {
+          "sheetSlot": {
+            "attachment": [
+              {
+                "name": "HUT DISASSEMBLE 0200"
+              },
+              {
+                "time": 0.0417,
+                "name": "HUT DISASSEMBLE 0201"
+              },
+              {
+                "time": 0.0833,
+                "name": "HUT DISASSEMBLE 0202"
+              },
+              {
+                "time": 0.125,
+                "name": "HUT DISASSEMBLE 0203"
+              },
+              {
+                "time": 0.1667,
+                "name": "HUT DISASSEMBLE 0204"
+              },
+              {
+                "time": 0.2083,
+                "name": "HUT DISASSEMBLE 0205"
+              },
+              {
+                "time": 0.25,
+                "name": "HUT DISASSEMBLE 0206"
+              },
+              {
+                "time": 0.2917,
+                "name": "HUT DISASSEMBLE 0207"
+              },
+              {
+                "time": 0.3333,
+                "name": "HUT DISASSEMBLE 0208"
+              },
+              {
+                "time": 0.375,
+                "name": "HUT DISASSEMBLE 0209"
+              },
+              {
+                "time": 0.4167,
+                "name": "HUT DISASSEMBLE 0210"
+              },
+              {
+                "time": 0.4583,
+                "name": "HUT DISASSEMBLE 0211"
+              },
+              {
+                "time": 0.5,
+                "name": "HUT DISASSEMBLE 0212"
+              },
+              {
+                "time": 0.5421,
+                "name": "HUT DISASSEMBLE 0213"
+              },
+              {
+                "time": 0.5838,
+                "name": "HUT DISASSEMBLE 0214"
+              },
+              {
+                "time": 0.6255,
+                "name": "HUT DISASSEMBLE 0215"
+              },
+              {
+                "time": 0.6672,
+                "name": "HUT DISASSEMBLE 0216"
+              },
+              {
+                "time": 0.7089,
+                "name": "HUT DISASSEMBLE 0217"
+              },
+              {
+                "time": 0.7506,
+                "name": "HUT DISASSEMBLE 0218"
+              },
+              {
+                "time": 0.7923,
+                "name": "HUT DISASSEMBLE 0219"
+              },
+              {
+                "time": 0.834,
+                "name": "HUT DISASSEMBLE 0220"
+              },
+              {
+                "time": 0.8757,
+                "name": "HUT DISASSEMBLE 0221"
+              },
+              {
+                "time": 0.9174,
+                "name": "HUT DISASSEMBLE 0222"
+              },
+              {
+                "time": 0.9591,
+                "name": "HUT DISASSEMBLE 0223"
+              },
+              {
+                "time": 1.0008,
+                "name": "HUT DISASSEMBLE 0224"
+              },
+              {
+                "time": 1.0425,
+                "name": "HUT DISASSEMBLE 0225"
+              },
+              {
+                "time": 1.0842,
+                "name": "HUT DISASSEMBLE 0226"
+              },
+              {
+                "time": 1.1259,
+                "name": "HUT DISASSEMBLE 0227"
+              },
+              {
+                "time": 1.1676,
+                "name": "HUT DISASSEMBLE 0228"
+              },
+              {
+                "time": 1.2093,
+                "name": "HUT DISASSEMBLE 0229"
+              },
+              {
+                "time": 1.251,
+                "name": "HUT DISASSEMBLE 0230"
+              },
+              {
+                "time": 1.2927,
+                "name": "HUT DISASSEMBLE 0231"
+              },
+              {
+                "time": 1.3344,
+                "name": "HUT DISASSEMBLE 0232"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "_atlasText": "\nHutDisassemble.png\nsize: 1298,4046\nformat: RGBA8888\nfilter: Linear,Linear\nrepeat: none\nHUT DISASSEMBLE 0200\n  rotate: false\n  xy: 2, 3709\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0201\n  rotate: false\n  xy: 2, 3372\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0202\n  rotate: false\n  xy: 2, 3035\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0203\n  rotate: false\n  xy: 2, 2698\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0204\n  rotate: false\n  xy: 2, 2361\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0205\n  rotate: false\n  xy: 2, 2024\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0206\n  rotate: false\n  xy: 2, 1687\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0207\n  rotate: false\n  xy: 2, 1350\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0208\n  rotate: false\n  xy: 2, 1013\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0209\n  rotate: false\n  xy: 2, 676\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0210\n  rotate: false\n  xy: 2, 339\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0211\n  rotate: false\n  xy: 2, 2\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0212\n  rotate: false\n  xy: 434, 3709\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0213\n  rotate: false\n  xy: 434, 3372\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0214\n  rotate: false\n  xy: 434, 3035\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0215\n  rotate: false\n  xy: 434, 2698\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0216\n  rotate: false\n  xy: 434, 2361\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0217\n  rotate: false\n  xy: 434, 2024\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0218\n  rotate: false\n  xy: 434, 1687\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0219\n  rotate: false\n  xy: 434, 1350\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0220\n  rotate: false\n  xy: 434, 1013\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0221\n  rotate: false\n  xy: 434, 676\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0222\n  rotate: false\n  xy: 434, 339\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0223\n  rotate: false\n  xy: 434, 2\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0224\n  rotate: false\n  xy: 866, 3709\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0225\n  rotate: false\n  xy: 866, 3372\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0226\n  rotate: false\n  xy: 866, 3035\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0227\n  rotate: false\n  xy: 866, 2698\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0228\n  rotate: false\n  xy: 866, 2361\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0229\n  rotate: false\n  xy: 866, 2024\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0230\n  rotate: false\n  xy: 866, 1687\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0231\n  rotate: false\n  xy: 866, 1350\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\nHUT DISASSEMBLE 0232\n  rotate: false\n  xy: 866, 1013\n  size: 430, 335\n  orig: 430, 335\n  offset: 0, 0\n  index: -1\n",
+  "textures": [
+    {
+      "__uuid__": "bfbf74c3-7400-49ed-b591-975bdac38e4f"
+    }
+  ],
+  "textureNames": [
+    "HutDisassemble.png"
+  ],
+  "scale": 1
+}
