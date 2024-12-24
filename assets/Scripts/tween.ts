@@ -1,55 +1,179 @@
 const { ccclass, property } = cc._decorator;
 
+type Trios = {
+    grand: Array<string>;
+    mini: Array<string>;
+    maxi: Array<string>;
+    minor: Array<string>;
+    major: Array<string>;
+};
+
 @ccclass
 export default class NewClass extends cc.Component {
+    @property([cc.Node])
+    nodes: cc.Node[] = [];
+
+    @property([cc.Sprite])
+    sprites: cc.Sprite[] = [];
 
     @property(cc.Node)
-    node1: cc.Node = null;
-    @property(cc.Node)
-    node2: cc.Node = null;
-    @property(cc.Node)
-    node3: cc.Node = null;
+    winText: cc.Node = null;
+
     @property(cc.Button)
-    flipButton: cc.Button = null;
+    resetButton: cc.Button = null;
 
-    // Properties to store original colors
-    private originalColors = {
-        node1: cc.Color.MAGENTA,
-        node2: cc.Color.GREEN,
-        node3: cc.Color.BLUE,
+    private isTappedMap = new Map<cc.Node, boolean>();
+
+    private elements: string[] = ["grand", "mini", "maxi", "major", "minor"];
+
+    private trios: Trios = {
+        grand: [],
+        mini: [],
+        maxi: [],
+        minor: [],
+        major: []
     };
-    
-    // Track the color state
-    private isRed: boolean = false;
+
+    private tapCount = 0;
+
+    private originalSpriteFrames: cc.SpriteFrame[] = []; 
+    private gameOver: boolean = false;
 
     onLoad() {
-        // Set the original colors of the nodes
-        this.node1.children[0].color = this.originalColors.node1;
-        this.node2.children[0].color = this.originalColors.node2;
-        this.node3.children[0].color = this.originalColors.node3;
+        this.nodes.forEach((node, index) => {
+            this.initializeNode(node);
+            if (this.sprites[index]) {
+                this.originalSpriteFrames[index] = this.sprites[index].spriteFrame; 
+            }
+        });
 
-        this.flipButton.node.on('click', this.flipAllNodes, this);
+        if (this.resetButton) {
+            this.resetButton.node.on('click', this.resetNodes, this);
+        }
     }
 
-    flipAllNodes() {
-        // Define the flip and color change animation for each node
-        const flipTween = (node: cc.Node, originalColor: cc.Color) => {
-            return cc.tween(node)
-                .to(0.2, { scaleX: 0 })  // Shrink horizontally to 0
-                .call(() => {
-                    node.scaleX = -node.scaleX;
-                    // Toggle color based on isRed state
-                    node.children[0].color = this.isRed ? originalColor : cc.Color.RED;
-                })
-                .to(0.2, { scaleX: 1 });  // Expand back to full size
-        };
+    initializeNode(node: cc.Node) {
+        if (node) {
+            this.isTappedMap.set(node, false);
 
-        // Run the flip and color change animation on each node with its respective original color
-        flipTween(this.node1, this.originalColors.node1).start();
-        flipTween(this.node2, this.originalColors.node2).start();
-        flipTween(this.node3, this.originalColors.node3).start();
-
-        // Toggle the color state for the next click
-        this.isRed = !this.isRed;
+            node.on(
+                cc.Node.EventType.TOUCH_END,
+                () => {
+                    if(!this.gameOver) {
+                        this.addToPair(node);
+                    }
+                },
+                this
+            );
+        }
     }
+
+    addToPair(node: cc.Node) {
+        const isTapped = this.isTappedMap.get(node) ?? false;
+        if (isTapped) {
+            return;
+        }
+    
+        this.refillElements();
+    
+        const element = this.elements.shift(); // Remove and get the first element
+        if (element !== undefined) {
+            const spriteIndex = this.nodes.indexOf(node);
+            if (spriteIndex >= 0 && this.sprites[spriteIndex]) {
+                cc.resources.load(element, cc.SpriteFrame, (err, spriteFrame) => {
+                    if (!err && spriteFrame) {
+                        // Update the sprite frame
+                        this.sprites[spriteIndex].spriteFrame = spriteFrame as cc.SpriteFrame;
+                        console.log(`Sprite for node ${spriteIndex} updated to ${element}.`);
+    
+                        // Add the element to its corresponding array
+                        this.trios[element as keyof Trios].push(element);
+                        console.log(`Added ${element} to ${element} array:`, this.trios[element as keyof Trios]);
+    
+                        // Check if the array's length has reached 3
+                        if (this.trios[element as keyof Trios].length === 3) {
+                            console.log(`${element} array has 3 elements, checking for a win.`);
+                            this.isWinning(); // Call isWinning here, after sprite update
+                        }
+                    } else {
+                        console.error(`Failed to load sprite for ${element}:`, err);
+                    }
+                });
+            }
+        } else {
+            console.error("Unexpected error: Element is undefined.");
+        }
+    
+        this.isTappedMap.set(node, true);
+        this.tapCount++;
+    }
+    
+    
+
+    resetNodes() {
+        this.nodes.forEach((node, index) => {
+            if (node) {
+                this.isTappedMap.set(node, false);
+                const sprite = this.sprites[index];
+                if (sprite) {
+                    sprite.spriteFrame = this.originalSpriteFrames[index] || null; // Reset to original sprite
+                }
+            }
+        });
+
+        // Reset trios and elements
+        this.trios = { grand: [], mini: [], maxi: [], minor: [], major: [] };
+        this.elements = ["grand", "mini", "maxi", "major", "minor"];
+        this.shuffleArray(this.elements);
+        this.tapCount = 0;
+        this.gameOver = false;
+
+        this.winText.active = false;
+
+        console.log("Nodes and arrays have been reset.");
+    }
+
+    isWinning() {
+        // Filter the indices of tapped nodes
+        const tappedIndices = this.nodes
+            .map((node, index) => (this.isTappedMap.get(node) ? index : -1))
+            .filter(index => index >= 0);
+    
+        // Check for winning combinations only among tapped indices
+        for (let i = 0; i < tappedIndices.length - 2; i++) {
+            for (let j = i + 1; j < tappedIndices.length - 1; j++) {
+                for (let k = j + 1; k < tappedIndices.length; k++) {
+                    const sprite1 = this.sprites[tappedIndices[i]]?.spriteFrame?.name;
+                    const sprite2 = this.sprites[tappedIndices[j]]?.spriteFrame?.name;
+                    const sprite3 = this.sprites[tappedIndices[k]]?.spriteFrame?.name;
+    
+                    if (sprite1 && sprite2 && sprite3 && sprite1 === sprite2 && sprite2 === sprite3) {
+                        this.gameOver = true;
+                        this.winText.active = true;
+                        console.log("Winning condition met:", sprite1, sprite2, sprite3);
+                        return;
+                    }
+                }
+            }
+        }
+        
+    
+        console.log("No winning condition found.");
+    }
+    
+    shuffleArray(array: string[]) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+    
+    refillElements() {
+        if (this.elements.length === 0) {
+            this.elements = ["grand", "mini", "maxi", "major", "minor"];
+            this.shuffleArray(this.elements);
+            console.log("Elements reshuffled:", this.elements);
+        }
+    }
+    
 }

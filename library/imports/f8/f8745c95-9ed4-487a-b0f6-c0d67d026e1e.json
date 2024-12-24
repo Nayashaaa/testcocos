@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "maxi",
+    "texture": "ca2ef7b0-5c80-4b1e-a8bc-92986d2cb233",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      58,
+      23
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      58,
+      23
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

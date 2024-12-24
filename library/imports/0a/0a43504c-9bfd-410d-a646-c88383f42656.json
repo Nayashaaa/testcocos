@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "miniBig",
+    "texture": "ec743e6f-0d71-47ee-b9d2-68bb06e8dfce",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      108,
+      52
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      108,
+      52
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

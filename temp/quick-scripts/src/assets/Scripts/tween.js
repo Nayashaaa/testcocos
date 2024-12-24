@@ -28,59 +28,156 @@ var NewClass = /** @class */ (function (_super) {
     __extends(NewClass, _super);
     function NewClass() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.node1 = null;
-        _this.node2 = null;
-        _this.node3 = null;
-        _this.flipButton = null;
-        // Properties to store original colors
-        _this.originalColors = {
-            node1: cc.Color.MAGENTA,
-            node2: cc.Color.GREEN,
-            node3: cc.Color.BLUE,
+        _this.nodes = [];
+        _this.sprites = [];
+        _this.winText = null;
+        _this.resetButton = null;
+        _this.isTappedMap = new Map();
+        _this.elements = ["grand", "mini", "maxi", "major", "minor"];
+        _this.trios = {
+            grand: [],
+            mini: [],
+            maxi: [],
+            minor: [],
+            major: []
         };
-        // Track the color state
-        _this.isRed = false;
+        _this.tapCount = 0;
+        _this.originalSpriteFrames = [];
+        _this.gameOver = false;
         return _this;
     }
     NewClass.prototype.onLoad = function () {
-        // Set the original colors of the nodes
-        this.node1.children[0].color = this.originalColors.node1;
-        this.node2.children[0].color = this.originalColors.node2;
-        this.node3.children[0].color = this.originalColors.node3;
-        this.flipButton.node.on('click', this.flipAllNodes, this);
-    };
-    NewClass.prototype.flipAllNodes = function () {
         var _this = this;
-        // Define the flip and color change animation for each node
-        var flipTween = function (node, originalColor) {
-            return cc.tween(node)
-                .to(0.2, { scaleX: 0 }) // Shrink horizontally to 0
-                .call(function () {
-                node.scaleX = -node.scaleX;
-                // Toggle color based on isRed state
-                node.children[0].color = _this.isRed ? originalColor : cc.Color.RED;
-            })
-                .to(0.2, { scaleX: 1 }); // Expand back to full size
-        };
-        // Run the flip and color change animation on each node with its respective original color
-        flipTween(this.node1, this.originalColors.node1).start();
-        flipTween(this.node2, this.originalColors.node2).start();
-        flipTween(this.node3, this.originalColors.node3).start();
-        // Toggle the color state for the next click
-        this.isRed = !this.isRed;
+        this.nodes.forEach(function (node, index) {
+            _this.initializeNode(node);
+            if (_this.sprites[index]) {
+                _this.originalSpriteFrames[index] = _this.sprites[index].spriteFrame;
+            }
+        });
+        if (this.resetButton) {
+            this.resetButton.node.on('click', this.resetNodes, this);
+        }
+    };
+    NewClass.prototype.initializeNode = function (node) {
+        var _this = this;
+        if (node) {
+            this.isTappedMap.set(node, false);
+            node.on(cc.Node.EventType.TOUCH_END, function () {
+                if (!_this.gameOver) {
+                    _this.addToPair(node);
+                }
+            }, this);
+        }
+    };
+    NewClass.prototype.addToPair = function (node) {
+        var _this = this;
+        var _a;
+        var isTapped = (_a = this.isTappedMap.get(node)) !== null && _a !== void 0 ? _a : false;
+        if (isTapped) {
+            return;
+        }
+        this.refillElements();
+        var element = this.elements.shift(); // Remove and get the first element
+        if (element !== undefined) {
+            var spriteIndex_1 = this.nodes.indexOf(node);
+            if (spriteIndex_1 >= 0 && this.sprites[spriteIndex_1]) {
+                cc.resources.load(element, cc.SpriteFrame, function (err, spriteFrame) {
+                    if (!err && spriteFrame) {
+                        // Update the sprite frame
+                        _this.sprites[spriteIndex_1].spriteFrame = spriteFrame;
+                        console.log("Sprite for node " + spriteIndex_1 + " updated to " + element + ".");
+                        // Add the element to its corresponding array
+                        _this.trios[element].push(element);
+                        console.log("Added " + element + " to " + element + " array:", _this.trios[element]);
+                        // Check if the array's length has reached 3
+                        if (_this.trios[element].length === 3) {
+                            console.log(element + " array has 3 elements, checking for a win.");
+                            _this.isWinning(); // Call isWinning here, after sprite update
+                        }
+                    }
+                    else {
+                        console.error("Failed to load sprite for " + element + ":", err);
+                    }
+                });
+            }
+        }
+        else {
+            console.error("Unexpected error: Element is undefined.");
+        }
+        this.isTappedMap.set(node, true);
+        this.tapCount++;
+    };
+    NewClass.prototype.resetNodes = function () {
+        var _this = this;
+        this.nodes.forEach(function (node, index) {
+            if (node) {
+                _this.isTappedMap.set(node, false);
+                var sprite = _this.sprites[index];
+                if (sprite) {
+                    sprite.spriteFrame = _this.originalSpriteFrames[index] || null; // Reset to original sprite
+                }
+            }
+        });
+        // Reset trios and elements
+        this.trios = { grand: [], mini: [], maxi: [], minor: [], major: [] };
+        this.elements = ["grand", "mini", "maxi", "major", "minor"];
+        this.shuffleArray(this.elements);
+        this.tapCount = 0;
+        this.gameOver = false;
+        this.winText.active = false;
+        console.log("Nodes and arrays have been reset.");
+    };
+    NewClass.prototype.isWinning = function () {
+        var _this = this;
+        var _a, _b, _c, _d, _e, _f;
+        // Filter the indices of tapped nodes
+        var tappedIndices = this.nodes
+            .map(function (node, index) { return (_this.isTappedMap.get(node) ? index : -1); })
+            .filter(function (index) { return index >= 0; });
+        // Check for winning combinations only among tapped indices
+        for (var i = 0; i < tappedIndices.length - 2; i++) {
+            for (var j = i + 1; j < tappedIndices.length - 1; j++) {
+                for (var k = j + 1; k < tappedIndices.length; k++) {
+                    var sprite1 = (_b = (_a = this.sprites[tappedIndices[i]]) === null || _a === void 0 ? void 0 : _a.spriteFrame) === null || _b === void 0 ? void 0 : _b.name;
+                    var sprite2 = (_d = (_c = this.sprites[tappedIndices[j]]) === null || _c === void 0 ? void 0 : _c.spriteFrame) === null || _d === void 0 ? void 0 : _d.name;
+                    var sprite3 = (_f = (_e = this.sprites[tappedIndices[k]]) === null || _e === void 0 ? void 0 : _e.spriteFrame) === null || _f === void 0 ? void 0 : _f.name;
+                    if (sprite1 && sprite2 && sprite3 && sprite1 === sprite2 && sprite2 === sprite3) {
+                        this.gameOver = true;
+                        this.winText.active = true;
+                        console.log("Winning condition met:", sprite1, sprite2, sprite3);
+                        return;
+                    }
+                }
+            }
+        }
+        console.log("No winning condition found.");
+    };
+    NewClass.prototype.shuffleArray = function (array) {
+        var _a;
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            _a = [array[j], array[i]], array[i] = _a[0], array[j] = _a[1];
+        }
+    };
+    NewClass.prototype.refillElements = function () {
+        if (this.elements.length === 0) {
+            this.elements = ["grand", "mini", "maxi", "major", "minor"];
+            this.shuffleArray(this.elements);
+            console.log("Elements reshuffled:", this.elements);
+        }
     };
     __decorate([
-        property(cc.Node)
-    ], NewClass.prototype, "node1", void 0);
+        property([cc.Node])
+    ], NewClass.prototype, "nodes", void 0);
+    __decorate([
+        property([cc.Sprite])
+    ], NewClass.prototype, "sprites", void 0);
     __decorate([
         property(cc.Node)
-    ], NewClass.prototype, "node2", void 0);
-    __decorate([
-        property(cc.Node)
-    ], NewClass.prototype, "node3", void 0);
+    ], NewClass.prototype, "winText", void 0);
     __decorate([
         property(cc.Button)
-    ], NewClass.prototype, "flipButton", void 0);
+    ], NewClass.prototype, "resetButton", void 0);
     NewClass = __decorate([
         ccclass
     ], NewClass);

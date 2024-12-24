@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "match 3 jackpots to win",
+    "texture": "319f67a9-67d9-4284-8995-8693da61e0d2",
+    "atlas": "",
+    "rect": [
+      1,
+      0,
+      341,
+      47
+    ],
+    "offset": [
+      0.5,
+      0
+    ],
+    "originalSize": [
+      342,
+      47
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

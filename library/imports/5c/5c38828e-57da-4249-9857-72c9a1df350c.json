@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "beatle",
+    "texture": "1ab78675-5785-4c2b-9fba-61ff4e8526e6",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      66,
+      58
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      66,
+      58
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
