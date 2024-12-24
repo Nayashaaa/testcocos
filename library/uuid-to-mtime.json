@@ -225,8 +225,8 @@
     "relativePath": "Scripts\\tween.ts"
   },
   "22e29223-1cc8-4b8a-bdda-f344445ae2c4": {
-    "asset": 1734954205457,
-    "meta": 1734954205471,
+    "asset": 1735040468145,
+    "meta": 1735040468155,
     "relativePath": "momummy.fire"
   },
   "8b2ec871-5a77-45ea-9311-051bf74205a6": {
@@ -745,8 +745,8 @@
     "relativePath": "model\\primitives.fbx"
   },
   "93127948-d677-4876-85d2-e646319c9b04": {
-    "asset": 1735015410483,
-    "meta": 1735016325432,
+    "asset": 1735040483183,
+    "meta": 1735040510740,
     "relativePath": "Scripts\\momummy.ts"
   }
 }

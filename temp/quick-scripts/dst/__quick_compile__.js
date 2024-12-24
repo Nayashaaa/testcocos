@@ -1,6 +1,6 @@
 
 (function () {
-var scripts = [{"deps":{"./assets/Scripts/homescreen":1,"./assets/Scripts/timer":2,"./assets/Scripts/basic":3,"./assets/Scripts/tween":4,"./assets/Scripts/column":5,"./assets/Scripts/momummy":6},"path":"preview-scripts/__qc_index__.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/homescreen.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/timer.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/basic.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/tween.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/column.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/momummy.js"}];
+var scripts = [{"deps":{"./assets/Scripts/homescreen":1,"./assets/Scripts/momummy":6,"./assets/Scripts/timer":2,"./assets/Scripts/tween":4,"./assets/Scripts/basic":3,"./assets/Scripts/column":5},"path":"preview-scripts/__qc_index__.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/homescreen.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/timer.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/basic.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/tween.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/column.js"},{"deps":{},"path":"preview-scripts/assets/Scripts/momummy.js"}];
 var entries = ["preview-scripts/__qc_index__.js"];
 var bundleScript = 'preview-scripts/__qc_bundle__.js';
 

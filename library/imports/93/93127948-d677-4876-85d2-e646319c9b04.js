@@ -44,6 +44,7 @@ var NewClass = /** @class */ (function (_super) {
         _this.mummy = null;
         _this.cellsBox = null;
         _this.diamondPrefab = null;
+        _this.collectedDiamonds = null;
         _this.diamonds = []; // Active diamonds
         _this.diamondsCollected = 0; // Counter for diamonds collected
         _this.boundaryOffset = null; // Initial boundary offset
@@ -64,14 +65,68 @@ var NewClass = /** @class */ (function (_super) {
         this.diamonds = [];
         // Shuffle cell positions randomly
         var shuffledCells = this.cells.sort(function () { return Math.random() - 0.5; });
-        // Place 3 diamonds randomly
-        for (var i = 0; i < 3; i++) {
-            var cell = shuffledCells[i];
-            var diamond = cc.instantiate(this.diamondPrefab);
-            diamond.parent = this.node; // Attach diamond to the main scene node
-            diamond.position = cell.position;
-            this.diamonds.push(diamond);
+        if (this.mummy.width < 500 && this.mummy.height < 500) {
+            for (var i = 0; i < 3; i++) {
+                var cell = shuffledCells[i];
+                var diamond = cc.instantiate(this.diamondPrefab);
+                diamond.parent = this.node; // Attach diamond to the main scene node
+                diamond.position = cell.position;
+                this.diamonds.push(diamond);
+            }
         }
+    };
+    NewClass.prototype.collectDiamond = function (diamond) {
+        var _this = this;
+        var index = this.diamonds.indexOf(diamond);
+        if (index !== -1) {
+            this.diamonds.splice(index, 1);
+        }
+        // Get the layouts inside collectedDiamonds
+        var collectedLayouts = this.collectedDiamonds.children;
+        if (collectedLayouts.length === 0) {
+            console.error("No layouts inside collectedDiamonds.");
+            diamond.destroy();
+            return;
+        }
+        // Determine the target layout based on the collected count
+        var targetIndex = (this.diamondsCollected % collectedLayouts.length);
+        var targetLayout = collectedLayouts[targetIndex];
+        // Convert the world position of the target layout to local position
+        var worldPosition = targetLayout.parent.convertToWorldSpaceAR(targetLayout.position);
+        var targetPosition = this.node.convertToNodeSpaceAR(worldPosition);
+        // Tween the diamond to the target layout
+        cc.tween(diamond)
+            .to(2, { position: targetPosition }, { easing: "sineInOut" })
+            .call(function () {
+            // Attach the diamond to the target layout and center it
+            diamond.setParent(targetLayout);
+            diamond.setPosition(cc.Vec3.ZERO);
+            // Increment the collected count
+            _this.diamondsCollected++;
+            // Process collected diamonds if three are collected
+            if (_this.diamondsCollected % 3 === 0) {
+                _this.collectedDiamonds.children.forEach(function (layout) {
+                    layout.removeAllChildren();
+                });
+            }
+        })
+            .start();
+    };
+    NewClass.prototype.moveDiamondToCollected = function (diamond) {
+        // Ensure collectedDiamonds has children to target
+        if (!this.collectedDiamonds || this.collectedDiamonds.children.length === 0) {
+            console.error("No target nodes found in collectedDiamonds.");
+            return;
+        }
+        console.log("travelling");
+        // Randomly choose one of the child nodes in collectedDiamonds
+        var targetNode = this.collectedDiamonds.children[Math.floor(Math.random() * this.collectedDiamonds.children.length)];
+        console.log("target position", targetNode.x, targetNode.y);
+        console.log("nayasha", this.collectedDiamonds.children[0].x, this.collectedDiamonds.children[0].y);
+        // Move the diamond to the selected target node with a 2-second tween
+        cc.tween(diamond)
+            .to(2, { position: targetNode.position }, { easing: 'sineInOut' })
+            .start();
     };
     NewClass.prototype.moveToNearestDiamond = function () {
         var _this = this;
@@ -82,11 +137,10 @@ var NewClass = /** @class */ (function (_super) {
         var moveToNextDiamond = function () {
             if (_this.diamonds.length === 0) {
                 console.log("Mummy reached all diamonds!");
-                _this.increaseMummySize(); // Increase the size of the mummy
-                console.error("Mummy position:", _this.mummy.position.x, _this.mummy.position.y);
-                console.error("Mummy size:", _this.mummy.width, _this.mummy.height);
-                _this.spawnDiamonds(); // Respawn diamonds when all are collected
-                moveToNextDiamond(); // Restart movement to nearest diamond
+                _this.spawnDiamonds(); // Respawn diamonds after size increase
+                _this.increaseMummySize(function () {
+                    moveToNextDiamond(); // Restart movement to nearest diamond
+                });
                 return;
             }
             // Function to calculate boundary offset
@@ -156,21 +210,19 @@ var NewClass = /** @class */ (function (_super) {
         };
         moveToNextDiamond();
     };
-    NewClass.prototype.collectDiamond = function (diamond) {
-        var index = this.diamonds.indexOf(diamond);
-        if (index !== -1) {
-            this.diamonds.splice(index, 1);
-            diamond.destroy();
-        }
-        this.diamondsCollected++;
-    };
-    NewClass.prototype.increaseMummySize = function () {
+    NewClass.prototype.increaseMummySize = function (callback) {
+        var _this = this;
         var _a, _b;
         console.log("Increasing mummy size");
         var cellWidth = ((_a = this.cells[0]) === null || _a === void 0 ? void 0 : _a.width) || 100; // Default to 100 if undefined
         var cellHeight = ((_b = this.cells[0]) === null || _b === void 0 ? void 0 : _b.height) || 100;
         if (!this.mummy || !this.cellsBox) {
             console.error("Mummy or cellsBox is not defined");
+            return;
+        }
+        if (this.mummy.width >= 500 || this.mummy.height >= 500) {
+            console.log("Mummy has reached the maximum size. Game Over!");
+            this.stopGame();
             return;
         }
         // Convert mummy's position to world space
@@ -198,6 +250,7 @@ var NewClass = /** @class */ (function (_super) {
         console.log("Valid directions:", validDirections);
         if (validDirections.length < 2) {
             console.log("Not enough space to expand in two directions.");
+            callback === null || callback === void 0 ? void 0 : callback(); // Proceed with movement even if expansion is skipped
             return;
         }
         // Remove opposite directions (e.g., left and right, up and down)
@@ -205,7 +258,6 @@ var NewClass = /** @class */ (function (_super) {
         for (var _i = 0, oppositePairs_1 = oppositePairs; _i < oppositePairs_1.length; _i++) {
             var _c = oppositePairs_1[_i], dir1 = _c[0], dir2 = _c[1];
             if (validDirections.includes(dir1) && validDirections.includes(dir2)) {
-                //console.log(Removing opposite directions: ${dir1} and ${dir2});
                 validDirections.splice(validDirections.indexOf(dir2), 1);
             }
         }
@@ -248,10 +300,23 @@ var NewClass = /** @class */ (function (_super) {
         }
         // Start the tweens sequentially
         if (expansionTweens.length > 0) {
-            expansionTweens.reduce(function (prev, curr) { return prev.call(function () { return curr.start(); }); }, cc.tween(this.mummy)).start();
+            expansionTweens.reduce(function (prev, curr) { return prev.call(function () { return curr.start(); }); }, cc.tween(this.mummy))
+                .call(function () {
+                // Wait for 2 seconds after the expansion is complete
+                _this.scheduleOnce(function () {
+                    callback === null || callback === void 0 ? void 0 : callback();
+                }, 2);
+            })
+                .start();
         }
-        console.error("Mummy position:", this.mummy.position.x, this.mummy.position.y);
-        console.error("Mummy size:", this.mummy.width, this.mummy.height);
+        else {
+            callback === null || callback === void 0 ? void 0 : callback(); // Proceed with movement if no expansion happens
+        }
+    };
+    NewClass.prototype.stopGame = function () {
+        console.log("Game has been stopped.");
+        cc.director.pause(); // Pauses the game
+        // Add any additional actions, such as showing a game-over UI
     };
     __decorate([
         property([cc.Node])
@@ -265,6 +330,9 @@ var NewClass = /** @class */ (function (_super) {
     __decorate([
         property(cc.Prefab)
     ], NewClass.prototype, "diamondPrefab", void 0);
+    __decorate([
+        property(cc.Node)
+    ], NewClass.prototype, "collectedDiamonds", void 0);
     NewClass = __decorate([
         ccclass
     ], NewClass);
