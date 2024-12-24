@@ -507,7 +507,7 @@
   "c9a81dd2-568f-4f87-a444-6f926c3b3b85": {
     "asset": 1730786259899,
     "meta": 1730786276815,
-    "relativePath": "carr.jpg"
+    "relativePath": "resources\\carr.jpg"
   },
   "f33e8bf3-9a4b-4fc6-8fd5-340c6dccafde": {
     "asset": 1730789565649,
@@ -516,22 +516,22 @@
   },
   "d107d3f6-e93c-41c8-b41c-3e21462fed6b": {
     "asset": 1730871632180,
-    "meta": 1730871632191,
-    "relativePath": "New Scene.fire"
+    "meta": 1730972142077,
+    "relativePath": "Catfit.fire"
   },
   "389b2691-e887-48c9-b566-57c1e2a3a237": {
-    "asset": 1730864736108,
-    "meta": 1730864736109,
+    "asset": 1730953603589,
+    "meta": 1730959778649,
     "relativePath": "Scripts"
   },
   "7c4d6c4f-e49b-4f1d-9a77-02cebe560375": {
-    "asset": 1730867692585,
-    "meta": 1730867692590,
+    "asset": 1730876153503,
+    "meta": 1730885415455,
     "relativePath": "HutAssemble Spine"
   },
   "8c39688a-38ce-4e82-ac78-6cb72075a033": {
-    "asset": 1730867692588,
-    "meta": 1730867692593,
+    "asset": 1730876153512,
+    "meta": 1730885415456,
     "relativePath": "HutDisassemble Spine"
   },
   "311ccfb5-263c-4149-ae7c-65eac541ec14": {
@@ -569,19 +569,89 @@
     "meta": 1730868673450,
     "relativePath": "New Scene - 001.fire"
   },
-  "f4d1896d-0e4d-41bf-b2e4-2ca1f70b3ace": {
-    "asset": 1730871601436,
-    "meta": 1730871608955,
-    "relativePath": "Scripts\\column.ts"
-  },
   "d7434788-5b3b-446d-9a07-fd51a11308de": {
-    "asset": 1730871703159,
-    "meta": 1730871708903,
+    "asset": 1730890886652,
+    "meta": 1730891849620,
     "relativePath": "tween.fire"
   },
   "ad7b725c-f7f2-479a-9a59-91e4c2abd5d2": {
-    "asset": 1730871926655,
-    "meta": 1730871933108,
+    "asset": 1730894632094,
+    "meta": 1730895072497,
     "relativePath": "Scripts\\tween.ts"
+  },
+  "5850d4f0-6fe2-40b0-99a9-479868b95c89": {
+    "asset": 1730973806178,
+    "meta": 1730973806189,
+    "relativePath": "HomeScene.fire"
+  },
+  "882f949b-c731-4a83-8244-7c681f758dda": {
+    "asset": 1730956696674,
+    "meta": 1730959778649,
+    "relativePath": "Prefab"
+  },
+  "c182c2f0-27ff-487f-ac6c-9232aa55f7d8": {
+    "asset": 1730956692768,
+    "meta": 1730956692778,
+    "relativePath": "Prefab\\Home.prefab"
+  },
+  "e2cb173f-bb47-4d18-862b-2adecfb80afc": {
+    "asset": 1730956694555,
+    "meta": 1730956694566,
+    "relativePath": "Prefab\\Timer.prefab"
+  },
+  "3b3e7dfb-b446-475b-89c0-ec8b4dd9b0a9": {
+    "asset": 1730956696654,
+    "meta": 1730956696675,
+    "relativePath": "Prefab\\Loading.prefab"
+  },
+  "7a10c56b-fe71-4b3e-8b9e-b327e52bd818": {
+    "asset": 1730971610442,
+    "meta": 1730971610453,
+    "relativePath": "stopwatch.fire"
+  },
+  "bd594bb1-b4de-4c41-87e9-e2fe950219cd": {
+    "asset": 1730962959469,
+    "meta": 1730962959481,
+    "relativePath": "Home.prefab"
+  },
+  "3865674b-15f9-49dd-a1f0-705ae428c377": {
+    "asset": 1730963261566,
+    "meta": 1730963261577,
+    "relativePath": "Prefab\\Loading - 001.prefab"
+  },
+  "8aa33e2e-e6c0-4adf-94ff-3c5cc087ce11": {
+    "asset": 1730970687309,
+    "meta": 1730970688339,
+    "relativePath": "Scripts\\timer.ts"
+  },
+  "f7613cb1-2b55-4777-8a8f-4604f03561ac": {
+    "asset": 1730972171710,
+    "meta": 1730972171711,
+    "relativePath": "resources"
+  },
+  "350ee29b-3c14-4ae7-842c-62cf7ee520ba": {
+    "asset": 1730972377922,
+    "meta": 1730972381459,
+    "relativePath": "Scripts\\homescreen.ts"
+  },
+  "340bd0ec-3b18-4b8f-974e-aacd6b4ce711": {
+    "asset": 1730973399450,
+    "meta": 1730973399458,
+    "relativePath": "resources\\TotalBetFnt"
+  },
+  "d459f067-616d-4534-a84d-00eb57e99b8d": {
+    "asset": 1730973384605,
+    "meta": 1730973399493,
+    "relativePath": "resources\\TotalBetFnt\\TotalBetFnt.fnt"
+  },
+  "5f633076-aed2-4421-8a07-3d7c2676c34a": {
+    "asset": 1730973384630,
+    "meta": 1730973399485,
+    "relativePath": "resources\\TotalBetFnt\\TotalBetFnt_0.png"
+  },
+  "f4d1896d-0e4d-41bf-b2e4-2ca1f70b3ace": {
+    "asset": 1730974670021,
+    "meta": 1730974677100,
+    "relativePath": "Scripts\\column.ts"
   }
 }
